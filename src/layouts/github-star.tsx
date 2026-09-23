@@ -6,8 +6,18 @@ import { Tooltip } from 'antd';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-const REPO = 'gpustack/gpustack';
-const CACHE_KEY = 'gpustack:github-stars';
+// The repository whose star count is shown. It used to be a second, hardcoded
+// copy of the upstream repo slug while the link itself came from
+// `externalLinks.github` — so pointing the link at this fork would have
+// advertised the upstream project's star count as if it were ours. Derive it
+// from the same value the link uses: the number and the destination cannot then
+// disagree, and an unparseable link means there is nothing to advertise.
+const githubRepoFromUrl = (url: string): string => {
+  const match = /^https?:\/\/github\.com\/([^/]+\/[^/]+)/.exec(url);
+  return match ? match[1].replace(/\.git$/, '') : '';
+};
+
+const CACHE_KEY_PREFIX = 'gpustack:github-stars';
 const CACHE_TTL = 24 * 60 * 60 * 1000;
 const FETCH_TIMEOUT = 4000;
 
@@ -65,9 +75,9 @@ const formatCount = (n: number): string => {
 
 type CacheEntry = { value: number; time: number };
 
-const readCache = (): CacheEntry | null => {
+const readCache = (key: string): CacheEntry | null => {
   try {
-    const raw = nsLocal.get(CACHE_KEY);
+    const raw = nsLocal.get(key);
     if (!raw) return null;
     const parsed = JSON.parse(raw);
     if (typeof parsed?.value !== 'number' || typeof parsed?.time !== 'number') {
@@ -79,9 +89,9 @@ const readCache = (): CacheEntry | null => {
   }
 };
 
-const writeCache = (value: number) => {
+const writeCache = (key: string, value: number) => {
   try {
-    nsLocal.set(CACHE_KEY, JSON.stringify({ value, time: Date.now() }));
+    nsLocal.set(key, JSON.stringify({ value, time: Date.now() }));
   } catch {
     // ignore quota errors
   }
@@ -89,24 +99,28 @@ const writeCache = (value: number) => {
 
 const GithubStar = () => {
   const intl = useIntl();
-  const [count, setCount] = useState<number | null>(
-    () => readCache()?.value ?? null
+  const repo = githubRepoFromUrl(externalLinks.github);
+  const cacheKey = `${CACHE_KEY_PREFIX}:${repo}`;
+  const [count, setCount] = useState<number | null>(() =>
+    repo ? (readCache(cacheKey)?.value ?? null) : null
   );
 
   useEffect(() => {
-    const cached = readCache();
+    if (!repo) return;
+
+    const cached = readCache(cacheKey);
     const fresh = cached && Date.now() - cached.time < CACHE_TTL;
     if (fresh) return;
 
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT);
 
-    fetch(`https://api.github.com/repos/${REPO}`, { signal: controller.signal })
+    fetch(`https://api.github.com/repos/${repo}`, { signal: controller.signal })
       .then((r) => (r.ok ? r.json() : null))
       .then((data) => {
         if (!data || typeof data.stargazers_count !== 'number') return;
         setCount(data.stargazers_count);
-        writeCache(data.stargazers_count);
+        writeCache(cacheKey, data.stargazers_count);
       })
       .catch(() => {
         // offline, blocked, rate-limited — stay hidden if no cache
@@ -117,7 +131,11 @@ const GithubStar = () => {
       clearTimeout(timer);
       controller.abort();
     };
-  }, []);
+  }, [repo, cacheKey]);
+
+  // Nothing to advertise, and nothing to link to: render no widget rather than
+  // a button whose count belongs to some other repository.
+  if (!repo) return null;
 
   return (
     <Tooltip title={intl.formatMessage({ id: 'common.github.star.tooltip' })}>

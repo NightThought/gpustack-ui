@@ -1,5 +1,6 @@
 import { PageAction } from '@/config';
 import { PageActionType } from '@/config/types';
+import { docLink } from '@/constants/external-links';
 import useUserSettings from '@/hooks/use-user-settings';
 import { json2Yaml } from '@/pages/backends/config';
 import { QuestionCircleOutlined } from '@ant-design/icons';
@@ -239,7 +240,7 @@ const ClusterAdvanceConfig: React.FC<{
                 size="small"
                 type="link"
                 target="_blank"
-                href="https://docs.gpustack.ai/latest/cli-reference/start/#config-file"
+                href={docLink('cli-reference/start/#config-file')}
               >
                 {intl.formatMessage({ id: 'playground.audio.enablemic.doc' })}{' '}
                 <IconFont

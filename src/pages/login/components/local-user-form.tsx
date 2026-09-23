@@ -1,4 +1,4 @@
-import externalLinks from '@/constants/external-links';
+import externalLinks, { isConfigured } from '@/constants/external-links';
 import {
   InfoCircleOutlined,
   LockOutlined,
@@ -158,16 +158,21 @@ const LocalUserForm: React.FC<LocalUserFormProps> = (props) => {
             })}
           />
         </Form.Item>
-        <Button
-          type="link"
-          size="small"
-          className="forgot-password"
-          style={{ fontSize: 12, padding: 0 }}
-          href={externalLinks.resetPassword}
-          target="_blank"
-        >
-          {intl.formatMessage({ id: 'common.button.forgotpassword' })}
-        </Button>
+        {/* An unconfigured reset-password URL renders no link at all: an anchor
+            with an empty href navigates to the current page, which reads as a
+            broken button rather than as a missing configuration. */}
+        {isConfigured('resetPassword') && (
+          <Button
+            type="link"
+            size="small"
+            className="forgot-password"
+            style={{ fontSize: 12, padding: 0 }}
+            href={externalLinks.resetPassword}
+            target="_blank"
+          >
+            {intl.formatMessage({ id: 'common.button.forgotpassword' })}
+          </Button>
+        )}
       </div>
       <Button
         htmlType="submit"

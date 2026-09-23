@@ -40,12 +40,12 @@ export default {
   'users.password.confirm.empty': 'Lütfen yeni şifreyi tekrar girin.',
   'users.password.confirm.error': 'Girilen iki şifre eşleşmiyor.',
   'users.login.title': 'Giriş yap:',
-  'users.version.islatest': 'GPUStack {version} en güncel sürümdür',
-  'users.version.update': 'GPUStack {version} kullanılabilir',
+  'users.version.islatest': 'OriginHub {version} en güncel sürümdür',
+  'users.version.update': 'OriginHub {version} kullanılabilir',
   'users.settings.title': 'Kullanıcı Ayarları',
   'users.status.activate': 'Hesabı Etkinleştir',
   'users.status.deactivate': 'Hesabı Devre Dışı Bırak',
   'users.status.inactiveAccount': 'Pasif Hesap',
   'users.login.getInitialPassword':
-    'Başlangıç yönetici şifresini almak için GPUStack Sunucunuzda aşağıdaki komutu çalıştırın.'
+    'Başlangıç yönetici şifresini almak için OriginHub Sunucunuzda aşağıdaki komutu çalıştırın.'
 };

@@ -1,4 +1,3 @@
-import GPUStackLogo from '@/assets/images/small-logo-200x200.png';
 import ai360 from '@/assets/providers-logo/ai360.svg';
 import azure from '@/assets/providers-logo/azureai.svg';
 import baichuan from '@/assets/providers-logo/baichuan.svg';
@@ -32,6 +31,7 @@ import stepfun from '@/assets/providers-logo/stepfun.svg';
 import togetherai from '@/assets/providers-logo/together.svg';
 import yi from '@/assets/providers-logo/yi.svg';
 import zhipuai from '@/assets/providers-logo/zhipu.svg';
+import { BrandMark } from '@/components/brand-logo';
 import { ProviderEnum } from '../config/providers';
 
 const ProviderLogoMap: Record<string, string> = {
@@ -67,14 +67,20 @@ const ProviderLogoMap: Record<string, string> = {
   [ProviderEnum.TOGETHERAI]: togetherai,
   [ProviderEnum.ZHIPUAI]: zhipuai,
   [ProviderEnum.GITHUB]: github,
-  [ProviderEnum.TRITON]: triton,
-  ['deployments']: GPUStackLogo
+  [ProviderEnum.TRITON]: triton
 };
 
 const ProviderLogo: React.FC<{
   provider: string;
   style?: React.CSSProperties;
 }> = ({ provider, style }) => {
+  // The built-in platform is this product, so its icon is the product mark
+  // rather than an entry in the map — and a text monogram when no brand artwork
+  // is configured, which a 16px `<img src="">` could never express.
+  if (provider === 'deployments') {
+    return <BrandMark size={16} style={style} alt={`${provider} logo`} />;
+  }
+
   const logoSrc = ProviderLogoMap[provider] || '';
   return (
     <img

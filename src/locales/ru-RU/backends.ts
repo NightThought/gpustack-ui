@@ -60,10 +60,10 @@ export default {
   'backend.source.title': 'Источник бэкендов',
   'backend.source.builtin.title': 'Built-in Backend',
   'backend.source.builtin.official':
-    'Follows the image versions GPUStack publishes for the built-in backends (vLLM, SGLang, MindIE, VoxBox).',
+    'Follows the published image versions for the built-in backends (vLLM, SGLang, MindIE, VoxBox).',
   'backend.source.community.title': 'Community Backend',
   'backend.source.community.official':
-    'Follows the community backend list GPUStack publishes, on top of the one packaged with this release.'
+    'Follows the published community backend list, on top of the one packaged with this release.'
 };
 
 // ========== To-Do: Translate Keys (Remove After Translation) ==========

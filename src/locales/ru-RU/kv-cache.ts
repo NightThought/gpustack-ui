@@ -7,7 +7,7 @@ export default {
   'kvCache.providerSelect.title': 'Select Provider',
   'kvCache.provider.source.builtin': 'Built-in',
   'kvCache.provider.source.community': 'Community',
-  'kvCache.provider.source.partner': 'GPUStack Certified Partner',
+  'kvCache.provider.source.partner': 'OriginHub Certified Partner',
   'kvCache.button.viewLogs': 'View Logs',
   'kvCache.edit.recreate.tips':
     'Changes take effect after the instances are deleted and recreated.',

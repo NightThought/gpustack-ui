@@ -7,7 +7,7 @@ export default {
   'kvCache.providerSelect.title': '选择提供方',
   'kvCache.provider.source.builtin': '内置',
   'kvCache.provider.source.community': '社区',
-  'kvCache.provider.source.partner': 'GPUStack 认证合作伙伴',
+  'kvCache.provider.source.partner': 'OriginHub 认证合作伙伴',
   'kvCache.button.viewLogs': '查看日志',
   'kvCache.edit.recreate.tips': '配置将在实例删除重建后生效。',
   'kvCache.table.provider': '提供方',

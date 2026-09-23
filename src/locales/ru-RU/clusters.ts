@@ -121,11 +121,11 @@ export default {
     '{count} новый воркер был добавлен в кластер.',
   'clusters.addworker.message.success_multiple':
     '{count} новых воркеров были добавлены в кластер.',
-  'clusters.create.serverUrl': 'GPUStack Server URL',
+  'clusters.create.serverUrl': 'OriginHub Server URL',
   'clusters.create.workerConfig': 'Конфигурация воркера',
   'clusters.chartValues.title': 'Chart Values (YAML)',
   'clusters.chartValues.tip':
-    'Values для Helm chart GPUStack: ключи те же, что и в самом chart, значения накладываются поверх выведенных сервером. Здесь доступно всё, что предоставляют chart и его subcharts и для чего нет поля выше — например отключение компонента, который уже есть в кластере. Как и в Helm, списки заменяются целиком, а не дополняются.',
+    'Values для Helm chart OriginHub: ключи те же, что и в самом chart, значения накладываются поверх выведенных сервером. Здесь доступно всё, что предоставляют chart и его subcharts и для чего нет поля выше — например отключение компонента, который уже есть в кластере. Как и в Helm, списки заменяются целиком, а не дополняются.',
   'clusters.chartValues.reapply.tip':
     'Сохранение кластера ничего не меняет в Kubernetes. После изменений заново выполните «Зарегистрировать кластер», получите manifest и примените его снова — Job внутри кластера сравнивает требуемую manifest конфигурацию с фактически установленной и обновляет release только при различии.',
   'clusters.chartValues.doc.chart': 'Chart values',
@@ -142,13 +142,13 @@ export default {
   'clusters.addworker.containerName': 'Имя контейнера воркера',
   'clusters.addworker.containerName.tips':
     'Укажите имя для контейнера воркера.',
-  'clusters.addworker.dataVolume': 'Том данных GPUStack',
+  'clusters.addworker.dataVolume': 'Том данных OriginHub',
   'clusters.addworker.dataVolume.tips':
-    'Укажите путь для хранения данных GPUStack.',
+    'Укажите путь для хранения данных OriginHub.',
   'clusters.table.ip.internal': 'Внутренний',
   'clusters.table.ip.external': 'Внешний',
   'clusters.form.serverUrl.tips':
-    'Если рабочий узел не может напрямую получить доступ к GPUStack Server, укажите внешний URL службы GPUStack Server. Например: {example}',
+    'Если рабочий узел не может напрямую получить доступ к OriginHub Server, укажите внешний URL службы OriginHub Server. Например: {example}',
   'clusters.form.setDefault': 'Установить по умолчанию',
   'clusters.form.setDefault.tips':
     'Использовать по умолчанию для развертывания.',
@@ -167,7 +167,7 @@ export default {
   'clusters.addworker.theadNotes-02':
     'T-Head PPU uses the Container Device Interface (CDI) for device injection and requires the <span class="bold-text">/var/run/cdi</span> directory to be available for CDI generation.',
   'clusters.addworker.nvidiaNotes':
-    'The built-in inference backends in GPUStack require <span class="bold-text">CUDA 12.8+</span>. Please ensure your NVIDIA driver version is <span class="bold-text">570</span> or newer.',
+    'The built-in inference backends in OriginHub require <span class="bold-text">CUDA 12.8+</span>. Please ensure your NVIDIA driver version is <span class="bold-text">570</span> or newer.',
   'clusters.volume.title': 'Volume Mounts',
   'clusters.volume.name': 'Volume Name',
   'clusters.volume.mountPath': 'Container Path',
@@ -194,7 +194,7 @@ export default {
   'clusters.volume.add': 'Add Volume Mount',
   'clusters.systemDefaultContainerRegistry.title': 'Default Container Registry',
   'clusters.systemDefaultContainerRegistry.tip':
-    'Default registry used to resolve GPUStack images for this cluster. Falls back to the server default when unset.',
+    'Default registry used to resolve platform images for this cluster. Falls back to the server default when unset.',
   'clusters.systemDefaultContainerRegistry.dockerHubUnreachable':
     'Экземпляры {provider} не имеют доступа к Docker Hub. Используйте зеркало или приватный реестр.',
   'clusters.k8sOptions.title': 'Kubernetes Deployment Options',
@@ -208,7 +208,7 @@ export default {
     'Pod nodeSelector applied to every worker DaemonSet — only nodes whose labels match are eligible to run the worker.',
   'clusters.operatorImage.title': 'Operator Image',
   'clusters.operatorImage.tip':
-    'Override for the GPUStack Operator container image. Leave empty to use the server default.',
+    'Override for the OriginHub Operator container image. Leave empty to use the server default.',
   'clusters.namespace.title': 'Namespace',
   'clusters.namespace.tip':
     'Kubernetes namespace the cluster’s manifests render into. Leave empty to use gpustack-system.',
@@ -247,5 +247,5 @@ export default {
 // 10. 'clusters.addworker.theadNotes': 'If the <span class="bold-text>/usr/local/PPU_SDK</span> directory does not exist, please create a symbolic link pointing to the T-Head PPU SDK installed path: <span class="bold-text>ln -s /path/to/PPU_SDK /usr/local/PPU_SDK</span>',
 // 11. 'clusters.addworker.theadNotes-02': 'T-Head PPU uses the Container Device Interface (CDI) for device injection and requires the <span class="bold-text">/var/run/cdi</span> directory to be available for CDI generation.'
 // 12. 'clusters.addworker.metaxNotes': `If the <span class="bold-text">/opt/mxdriver</span> or <span class="bold-text">/opt/maca</span> directory does not exist, create a symbolic link to the MetaX driver and SDK installation path: <span class="desc-fill">ln -s /path/to/mxdriver /opt/mxdriver</span><span class="desc-fill">ln -s /path/to/maca /opt/maca</span>.`,
-// 13. 'clusters.addworker.nvidiaNotes': 'The built-in inference backends in GPUStack v2.1 require <span class="bold-text">CUDA 12.6+</span>. Please ensure your NVIDIA driver version is <span class="bold-text">560</span> or newer.'
+// 13. 'clusters.addworker.nvidiaNotes': 'The built-in inference backends in OriginHub v2.1 require <span class="bold-text">CUDA 12.6+</span>. Please ensure your NVIDIA driver version is <span class="bold-text">560</span> or newer.'
 // ================================================================

@@ -1,6 +1,7 @@
 import { GPUStackVersionAtom } from '@/atoms/user';
 import VersionInfo, { modalConfig } from '@/components/version-info';
-import externalLinks from '@/constants/external-links';
+import { ATTRIBUTION, COMPANY_NAME } from '@/config/branding';
+import externalLinks, { isConfigured } from '@/constants/external-links';
 import { useIntl } from '@umijs/max';
 import { Button, Divider, Modal, Typography } from 'antd';
 import { createStyles } from 'antd-style';
@@ -55,23 +56,51 @@ const Footer: React.FC = () => {
               <CompanyWrapper>
                 <span>&copy;</span>
                 <span> {new Date().getFullYear()}</span>
-                <Typography.Link
-                  href="https://gpustack.ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {intl.formatMessage({ id: 'settings.company' })}
-                </Typography.Link>
+                {/*
+                  The copyright entity comes from branding, not from a locale
+                  string: upstream hardcoded a vendor name here, which is the
+                  most visible possible place for the old brand to survive a
+                  rebrand. Linked only when a site is configured — an anchor
+                  with an empty href navigates to the current page and reads as
+                  a broken control.
+                */}
+                {isConfigured('site') ? (
+                  <Typography.Link
+                    href={externalLinks.site}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {COMPANY_NAME}
+                  </Typography.Link>
+                ) : (
+                  <span> {COMPANY_NAME}</span>
+                )}
               </CompanyWrapper>
+              {/*
+                Apache-2.0 attribution, in the one place every user of the
+                console passes through. The licence does not require a visible
+                notice, and §4 is satisfied by the LICENSE and NOTICE files that
+                ship with the build; putting it here is the deliberate choice
+                recommended for a derivative work, because it is honest about
+                provenance without implying endorsement.
+              */}
               <Divider orientation="vertical" />
-              <Button
-                type="link"
-                size="small"
-                href={externalLinks.documentation}
-                target="_blank"
-              >
-                {intl.formatMessage({ id: 'common.button.help' })}
-              </Button>
+              <Typography.Text type="secondary" style={{ fontSize: 12 }}>
+                {ATTRIBUTION}
+              </Typography.Text>
+              {isConfigured('documentation') && (
+                <>
+                  <Divider orientation="vertical" />
+                  <Button
+                    type="link"
+                    size="small"
+                    href={externalLinks.documentation}
+                    target="_blank"
+                  >
+                    {intl.formatMessage({ id: 'common.button.help' })}
+                  </Button>
+                </>
+              )}
               <Divider orientation="vertical" />
               <Button type="link" size="small" onClick={showVersion}>
                 {version?.version}

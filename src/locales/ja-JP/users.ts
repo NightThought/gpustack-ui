@@ -40,14 +40,14 @@ export default {
   'users.password.confirm.empty': '新しいパスワードを確認してください。',
   'users.password.confirm.error': '入力された2つのパスワードが一致しません。',
   'users.login.title': 'ログイン',
-  'users.version.islatest': 'GPUStack {version} は最新バージョンです',
-  'users.version.update': 'GPUStack {version} が利用可能です',
+  'users.version.islatest': 'OriginHub {version} は最新バージョンです',
+  'users.version.update': 'OriginHub {version} が利用可能です',
   'users.settings.title': 'User Settings',
   'users.status.activate': 'Activate Account',
   'users.status.deactivate': 'Deactivate Account',
   'users.status.inactiveAccount': 'Inactive Account',
   'users.login.getInitialPassword':
-    'Run the following command on your GPUStack Server to retrieve the initial admin password.'
+    'Run the following command on your OriginHub Server to retrieve the initial admin password.'
 };
 
 // ========== To-Do: Translate Keys (Remove After Translation) ==========
@@ -55,5 +55,5 @@ export default {
 // 2. 'users.status.activate': 'Activate Account',
 // 3. 'users.status.deactivate': 'Deactivate Account',
 // 4. 'users.status.inactiveAccount': 'Inactive Account',
-// 5. 'users.login.getInitialPassword': 'Run the following command on your GPUStack Server to retrieve the initial admin password.'
+// 5. 'users.login.getInitialPassword': 'Run the following command on your OriginHub Server to retrieve the initial admin password.'
 // ========== End of To-Do List ==========

@@ -1,3 +1,4 @@
 
 node scripts/check-enterprise-pollution.cjs
+node scripts/check-brand.cjs
 npx lint-staged

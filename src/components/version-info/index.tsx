@@ -1,5 +1,5 @@
-import Logo from '@/assets/images/gpustack-logo.png';
 import { GPUStackVersionAtom, UpdateCheckAtom, userAtom } from '@/atoms/user';
+import { BrandWordmark } from '@/components/brand-logo';
 import externalLinks from '@/constants/external-links';
 import { useLogo } from '@/hooks/use-logo';
 import { Button } from 'antd';
@@ -31,7 +31,7 @@ const VersionInfo: React.FC<{ intl: any }> = ({ intl }) => {
   return (
     <div className="version-box">
       <div className="img">
-        <img src={sidebarLogo || Logo} alt="logo" />
+        <BrandWordmark src={sidebarLogo} height={30} />
       </div>
 
       <div className="ver">

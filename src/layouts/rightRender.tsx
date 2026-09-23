@@ -1,5 +1,6 @@
 // @ts-nocheck
 import avatarImg from '@/assets/images/avatar.png';
+import { PRODUCT_NAME } from '@/config/branding';
 import externalLinks from '@/constants/external-links';
 import {
   DiscordOutlined,
@@ -82,7 +83,7 @@ export const getRightRenderContent = (opts: {
     {
       key: 'site',
       icon: <HomeOutlined />,
-      label: 'GPUStack',
+      label: PRODUCT_NAME,
       url: externalLinks.site
     },
     {
@@ -120,7 +121,10 @@ export const getRightRenderContent = (opts: {
       icon: <InfoCircleOutlined />,
       label: intl.formatMessage({ id: 'common.button.version' })
     }
-  ];
+    // An unconfigured link would render href="", which navigates
+    // to the current page and reads as a broken button. Action
+    // items declare no url at all, so they survive the filter.
+  ].filter((item) => !('url' in item) || Boolean(item.url));
 
   const helpMenu = {
     selectedKeys: [],

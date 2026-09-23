@@ -7,6 +7,7 @@ import mooreLogo from '@/assets/logo/moore-logo.png';
 import nvidiaLogo from '@/assets/logo/nvidia.png';
 import theadLogoEN from '@/assets/logo/t-head-en.png';
 import theadLogoZH from '@/assets/logo/t-head-zh.png';
+import { docLink } from '@/constants/external-links';
 import useUserSettings from '@/hooks/use-user-settings';
 import {
   AddWorkerDockerNotes,
@@ -146,7 +147,7 @@ export const useSupportedGPUList = () => {
       key: GPUDriverMap.NVIDIA,
       locale: false,
       notes: AddWorkerDockerNotes[GPUDriverMap.NVIDIA],
-      link: 'https://docs.gpustack.ai/latest/installation/requirements/#nvidia-gpu',
+      link: docLink('installation/requirements/#nvidia-gpu'),
       icon: <ProviderImage src={nvidiaLogo} height={18} />
     },
     {
@@ -157,7 +158,7 @@ export const useSupportedGPUList = () => {
       key: GPUDriverMap.AMD,
       locale: false,
       notes: AddWorkerDockerNotes[GPUDriverMap.AMD],
-      link: 'https://docs.gpustack.ai/latest/installation/requirements/#amd-gpu',
+      link: docLink('installation/requirements/#amd-gpu'),
       icon: (
         <IconFont
           type="icon-amd-logo"
@@ -173,7 +174,7 @@ export const useSupportedGPUList = () => {
       key: GPUDriverMap.ASCEND,
       locale: false,
       notes: AddWorkerDockerNotes[GPUDriverMap.ASCEND],
-      link: 'https://docs.gpustack.ai/latest/installation/requirements/#ascend-npu',
+      link: docLink('installation/requirements/#ascend-npu'),
       icon: <ProviderImage src={ascendLogo} height={30} />
     },
     {
@@ -184,7 +185,7 @@ export const useSupportedGPUList = () => {
       key: GPUDriverMap.HYGON,
       locale: false,
       notes: AddWorkerDockerNotes[GPUDriverMap.HYGON],
-      link: 'https://docs.gpustack.ai/latest/installation/requirements/#hygon-dcu',
+      link: docLink('installation/requirements/#hygon-dcu'),
       icon: <ProviderImage src={hyponPNG} height={18} />
     },
     {
@@ -193,7 +194,7 @@ export const useSupportedGPUList = () => {
       value: GPUDriverMap.METAX,
       key: GPUDriverMap.METAX,
       locale: false,
-      link: 'https://docs.gpustack.ai/latest/installation/requirements/#metax-gpu',
+      link: docLink('installation/requirements/#metax-gpu'),
       notes: AddWorkerDockerNotes[GPUDriverMap.METAX],
       icon: <ProviderImage src={metaxLogo} height={20} />
     },
@@ -205,7 +206,7 @@ export const useSupportedGPUList = () => {
       key: GPUDriverMap.MOORE_THREADS,
       locale: false,
       notes: AddWorkerDockerNotes[GPUDriverMap.MOORE_THREADS],
-      link: 'https://docs.gpustack.ai/latest/installation/requirements/#mthreads-gpu',
+      link: docLink('installation/requirements/#mthreads-gpu'),
       icon: <ProviderImage src={mooreLogo} height={24} />
     },
     {
@@ -216,7 +217,7 @@ export const useSupportedGPUList = () => {
       key: GPUDriverMap.ILUVATAR,
       locale: false,
       notes: AddWorkerDockerNotes[GPUDriverMap.ILUVATAR],
-      link: 'https://docs.gpustack.ai/latest/installation/requirements/#iluvatar-gpu',
+      link: docLink('installation/requirements/#iluvatar-gpu'),
       icon: <ProviderImage src={iluvatarWEBP} height={24} />
     },
     {
@@ -227,7 +228,7 @@ export const useSupportedGPUList = () => {
       key: GPUDriverMap.CAMBRICON,
       locale: false,
       notes: AddWorkerDockerNotes[GPUDriverMap.CAMBRICON],
-      link: 'https://docs.gpustack.ai/latest/installation/requirements/#cambricon-mlu',
+      link: docLink('installation/requirements/#cambricon-mlu'),
       icon: <ProviderImage src={CambriconPNG} height={24} />
     },
     {
@@ -237,7 +238,7 @@ export const useSupportedGPUList = () => {
       value: GPUDriverMap.THEAD,
       key: GPUDriverMap.THEAD,
       locale: false,
-      link: 'https://docs.gpustack.ai/latest/installation/requirements/#thead-gpu',
+      link: docLink('installation/requirements/#thead-gpu'),
       notes: AddWorkerDockerNotes[GPUDriverMap.THEAD],
       icon: (
         <ProviderImage

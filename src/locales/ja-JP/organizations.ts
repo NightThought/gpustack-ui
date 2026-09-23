@@ -1,8 +1,9 @@
 export default {
-  'organizations.upsell.title': 'Organizations are an Enterprise feature',
+  'organizations.upsell.title':
+    'Organizations are not enabled in the console yet',
   'organizations.upsell.subtitle':
-    'Multi-tenancy lets you isolate users, resources, and quotas across teams. Upgrade to GPUStack Enterprise to manage organizations.',
-  'organizations.upsell.featuresTitle': 'What you get in Enterprise',
+    'Multi-tenancy lets you isolate users, resources, and quotas across teams. This console page is not wired up yet.',
+  'organizations.upsell.featuresTitle': 'What it covers',
   'organizations.upsell.feature.orgs':
     'Create organizations to group users and isolate workloads',
   'organizations.upsell.feature.members':
@@ -11,5 +12,5 @@ export default {
     'Set resource and token quotas per organization',
   'organizations.upsell.feature.isolation':
     'Scope API keys, model deployments, and resources per organization',
-  'organizations.upsell.cta': 'Learn about Enterprise'
+  'organizations.upsell.cta': 'Learn more'
 };

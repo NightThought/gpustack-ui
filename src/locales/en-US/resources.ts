@@ -52,7 +52,7 @@ export default {
   'resources.worker.container.supported': 'Do not support macOS or Windows.',
   'resources.worker.current.version': 'Current version is {version}.',
   'resources.worker.driver.install':
-    'Install <a href="https://docs.gpustack.ai/latest/installation/installation-requirements/" target="_blank">required drivers and libraries</a> prior to GPUStack installation.',
+    'Install <a href="https://docs.gpustack.ai/latest/installation/installation-requirements/" target="_blank">required drivers and libraries</a> prior to OriginHub installation.',
   'resources.worker.select.command':
     'Select a label to generate the command and copy it using the copy button.',
   'resources.worker.script.install': 'Script Installation',
@@ -89,7 +89,7 @@ export default {
     'Paste the <span class="bold-text">Token</span>.',
   'resources.register.worker.step7':
     'Click <span class="bold-text">Restart</span> to apply the settings.',
-  'resources.register.install.title': 'Install GPUStack on {os}',
+  'resources.register.install.title': 'Install OriginHub on {os}',
   'resources.register.download':
     'Download and install the <a href={url} target="_blank">installer</a>. Only supported: {versions}.',
   'resource.register.maos.support': 'Apple Silicon (M series), macOS 14+',
@@ -120,7 +120,7 @@ export default {
     'No available clusters. Please create a cluster before adding a node.',
   'resources.metrics.details': 'Monitoring',
   'resoureces.worker.upgrade.tips':
-    'The Worker version does not match the GPUStack Server version. Please keep them consistent.',
+    'The Worker version does not match the OriginHub Server version. Please keep them consistent.',
   'resources.worker.version': 'Worker Version: {version}',
   'resources.server.version': 'Server Version: {version}',
   'resources.worker.currentVersion': 'Current Version: {version}',

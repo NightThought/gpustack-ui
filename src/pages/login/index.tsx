@@ -1,4 +1,3 @@
-import LogoIcon from '@/assets/images/gpustack-logo.png';
 import { initialPasswordAtom, userAtom } from '@/atoms/user';
 import { resetStorageUserSettings } from '@/atoms/utils';
 import DarkMask from '@/components/dark-mask';
@@ -6,6 +5,7 @@ import Footer from '@/components/footer';
 import LangSelect from '@/components/lang-select';
 import ThemeDropActions from '@/components/theme-toggle/theme-drop-actions';
 import { PasswordReg } from '@/config';
+import { PRODUCT_WORDMARK } from '@/config/logos';
 import { GPUSTACK_API_BASE_URL } from '@/config/settings';
 import { COLOR_PRIMARY } from '@/config/theme/constants';
 import externalLinks from '@/constants/external-links';
@@ -188,7 +188,7 @@ const Login = () => {
       passwordReg: PasswordReg,
       onPasswordChanged,
       resetPasswordUrl: externalLinks.resetPassword,
-      formLogoUrl: LogoIcon
+      formLogoUrl: PRODUCT_WORDMARK
     }),
     [
       userInfo,

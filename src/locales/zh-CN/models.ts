@@ -59,7 +59,7 @@ export default {
   'models.form.configurations': '配置',
   'models.form.s3address': 'S3 地址',
   'models.form.partialoffload.tips':
-    '启用 CPU 卸载后，GPU 不足时 GPUStack 会自动使用 CPU 内存。请确保推理后端已正确配置为混合 CPU+GPU 或纯 CPU 推理。',
+    '启用 CPU 卸载后，GPU 不足时 OriginHub 会自动使用 CPU 内存。请确保推理后端已正确配置为混合 CPU+GPU 或纯 CPU 推理。',
   'models.form.distribution.tips':
     '允许在单个节点资源不足时，将部分计算卸载到一个或多个远程节点。',
   'models.openinplayground': '在 Playground 中打开',
@@ -70,7 +70,7 @@ export default {
   'model.deploy.sort': '排序',
   'model.deploy.search.placeholder': '按 <kbd>/</kbd> 开始搜索模型',
   'model.form.ollamatips':
-    '提示：以下为 GPUStack 预设的 Ollama 模型，请选择你想要的模型或者直接在右侧表单 【{name}】 输入框中输入你要部署的模型。',
+    '提示：以下为 OriginHub 预设的 Ollama 模型，请选择你想要的模型或者直接在右侧表单 【{name}】 输入框中输入你要部署的模型。',
   'models.sort.name': '名称',
   'models.sort.size': '大小',
   'models.sort.likes': '点赞量',
@@ -139,7 +139,7 @@ export default {
   'models.form.filePath': '模型路径',
   'models.form.backendVersion': '后端版本',
   'models.form.backendVersion.tips':
-    '固定以使用期望的 {backend} 版本 {version}，在线环境会自动创建虚拟环境安装对应版本的 {backend}。在 GPUStack 升级后也将保持固定的后端版本。{link}',
+    '固定以使用期望的 {backend} 版本 {version}，在线环境会自动创建虚拟环境安装对应版本的 {backend}。在 OriginHub 升级后也将保持固定的后端版本。{link}',
   'models.form.gpuselector': 'GPU 选择器',
   'models.form.backend.llamabox':
     '用于 GGUF 格式模型，支持 Linux, macOS 和 Windows。',
@@ -391,7 +391,7 @@ export default {
   'models.form.backendVersions.tips': `如需使用更多版本，请前往{link}页面并编辑对应的后端以添加版本。`,
   'models.catalog.nogpus.tips': '所选集群中没有兼容该模型的 GPU。',
   'models.form.modelfile.notfound':
-    '你指定的模型文件路径在 GPUStack Server 节点上不存在。建议在 GPUStack Server 节点和 GPUStack 节点上使用相同的模型文件路径，这有助于 GPUStack 做出更优的调度与决策。',
+    '你指定的模型文件路径在 OriginHub Server 节点上不存在。建议在 OriginHub Server 节点和 OriginHub 节点上使用相同的模型文件路径，这有助于 OriginHub 做出更优的调度与决策。',
   'models.form.readyWorkers': '节点就绪',
   'models.form.maxContextLength': '最大上下文长度',
   'models.form.backend.helperText': '该社区后端暂未启用，部署后将自动启用',
@@ -414,5 +414,5 @@ export default {
   // Model catalog source configuration
   'models.catalog.source.title': '模型库来源',
   'models.catalog.source.official':
-    '在随本版本打包的内置模型库之上，跟随 GPUStack 发布的官方模型库。'
+    '在随本版本打包的内置模型库之上，跟随已发布的官方模型库。'
 };

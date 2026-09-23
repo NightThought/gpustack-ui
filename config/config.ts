@@ -1,4 +1,5 @@
 import { defineConfig } from '@umijs/max';
+import { PRODUCT_NAME, externalLinkOverrides } from './branding';
 import keepAlive from './keep-alive';
 import { extraMfsuExclude } from './mfsu.extensions';
 import { compressionPluginConfig, monacoPluginConfig } from './plugins';
@@ -20,7 +21,25 @@ export default defineConfig({
     type: 'hash'
   },
   define: {
-    'process.env.ENABLE_ENTERPRISE': process.env.ENABLE_ENTERPRISE
+    'process.env.ENABLE_ENTERPRISE': process.env.ENABLE_ENTERPRISE,
+    // One JSON literal carrying every ORIGINHUB_LINK_* override, so the app can
+    // offer build-time configuration without reading process.env dynamically
+    // (which does not exist in a browser bundle). See config/branding.ts.
+    'process.env.ORIGINHUB_LINKS': JSON.stringify(externalLinkOverrides()),
+    // Raw values here, deliberately — do **not** wrap these in JSON.stringify.
+    // umi stringifies every define value itself before handing it to webpack:
+    // `for (const key in userConfig.define) define[key] = JSON.stringify(...)`
+    // in @umijs/bundler-webpack/dist/config/definePlugin.js (line 60 as of
+    // 4.6.51). Stringifying here as well makes the value arrive with its quotes
+    // intact, so the footer would render `"Acme Ltd"` and an unset value would
+    // be the two-character `""` instead of falling back to the product name.
+    //
+    // The links above are the exception that proves the rule: they are a JSON
+    // blob, so the extra stringify is what makes the runtime `JSON.parse` in
+    // src/constants/external-links.ts see an object rather than a string.
+    'process.env.ORIGINHUB_COMPANY': process.env.ORIGINHUB_COMPANY || '',
+    'process.env.ORIGINHUB_LOGO': process.env.ORIGINHUB_LOGO || '',
+    'process.env.ORIGINHUB_MINI_LOGO': process.env.ORIGINHUB_MINI_LOGO || ''
   },
   analyze: {
     analyzerMode: 'server',
@@ -66,7 +85,8 @@ export default defineConfig({
           monacoPluginConfig(config);
         }
       }),
-  favicons: ['/static/favicon.png'],
+  // Served from public/, so a deployment can replace the file without a build.
+  favicons: [process.env.ORIGINHUB_FAVICON || '/static/favicon.png'],
   jsMinifier: 'terser',
   cssMinifier: 'cssnano',
   presets: ['umi-presets-pro'],
@@ -74,7 +94,9 @@ export default defineConfig({
   antd: {
     style: 'less'
   },
-  title: 'GPUStack',
+  // The document title, and the only place it is set: there is no index.html
+  // or document.ejs in this repository, umi generates the HTML from this value.
+  title: PRODUCT_NAME,
   hash: true,
   access: {},
   model: {},

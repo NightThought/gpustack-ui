@@ -94,7 +94,7 @@ export default {
   'clusters.addworker.detectWorkerAddress.tips':
     "Belirtilmezse İşçi Düğüm IP'si varsayılır.",
   'clusters.addworker.externalIP.tips':
-    'VPC veya özel ağda çalıştırılıyorsa, lütfen GPUStack Sunucusuna erişilebilir İşçi Düğüm harici adresini belirtin.',
+    'VPC veya özel ağda çalıştırılıyorsa, lütfen OriginHub Sunucusuna erişilebilir İşçi Düğüm harici adresini belirtin.',
   'clusters.addworker.enterWorkerIP': "İşçi düğüm IP'sini girin",
   'clusters.addworker.enterWorkerIP.error': "Lütfen işçi düğüm IP'sini girin.",
   'clusters.addworker.enterWorkerAddress': 'İşçi düğüm harici adresini girin',
@@ -121,11 +121,11 @@ export default {
     '{count} yeni işçi düğüm kümeye eklendi.',
   'clusters.addworker.message.success_multiple':
     '{count} yeni işçi düğüm kümeye eklendi.',
-  'clusters.create.serverUrl': "GPUStack Sunucu URL'si",
+  'clusters.create.serverUrl': "OriginHub Sunucu URL'si",
   'clusters.create.workerConfig': 'İşçi Düğüm Yapılandırması',
   'clusters.chartValues.title': 'Chart Values (YAML)',
   'clusters.chartValues.tip':
-    'GPUStack Helm chart’ının values değerleri; anahtarlar chart’ın kendi anahtarlarıyla aynıdır ve sunucunun türettiği değerlerin üzerine birleştirilir. Yukarıda karşılık gelen bir alan olmayan, chart ve alt chart’larının sunduğu her şey buradan ayarlanabilir — örneğin kümede hâlihazırda bulunan bir bileşeni kapatmak. Helm’de olduğu gibi listeler eklenmez, tümüyle değiştirilir.',
+    'OriginHub Helm chart’ının values değerleri; anahtarlar chart’ın kendi anahtarlarıyla aynıdır ve sunucunun türettiği değerlerin üzerine birleştirilir. Yukarıda karşılık gelen bir alan olmayan, chart ve alt chart’larının sunduğu her şey buradan ayarlanabilir — örneğin kümede hâlihazırda bulunan bir bileşeni kapatmak. Helm’de olduğu gibi listeler eklenmez, tümüyle değiştirilir.',
   'clusters.chartValues.reapply.tip':
     'Kümeyi kaydetmek Kubernetes tarafında hiçbir şeyi değiştirmez. Değişiklikten sonra «Kümeyi Kaydet» akışını yeniden çalıştırıp manifest’i alın ve tekrar uygulayın — küme içindeki Job, manifest’in istediği yapılandırmayı release’in kurulu yapılandırmasıyla karşılaştırır ve yalnızca fark varsa yükseltme yapar.',
   'clusters.chartValues.doc.chart': 'Chart values',
@@ -142,13 +142,13 @@ export default {
   'clusters.addworker.containerName': 'İşçi Düğüm Konteyner Adı',
   'clusters.addworker.containerName.tips':
     'İşçi düğüm konteyneri için bir ad belirtin.',
-  'clusters.addworker.dataVolume': 'GPUStack Veri Birimi',
+  'clusters.addworker.dataVolume': 'OriginHub Veri Birimi',
   'clusters.addworker.dataVolume.tips':
-    'GPUStack için veri depolama yolu belirtin.',
+    'OriginHub için veri depolama yolu belirtin.',
   'clusters.table.ip.internal': 'Dahili',
   'clusters.table.ip.external': 'Harici',
   'clusters.form.serverUrl.tips':
-    "İşçi düğüm GPUStack Sunucusuna doğrudan erişemiyorsa, harici olarak erişilebilir bir GPUStack hizmet URL'si belirtin. Örneğin: {example}",
+    "İşçi düğüm OriginHub Sunucusuna doğrudan erişemiyorsa, harici olarak erişilebilir bir OriginHub hizmet URL'si belirtin. Örneğin: {example}",
   'clusters.form.setDefault': 'Varsayılan Olarak Ayarla',
   'clusters.form.setDefault.tips': 'Dağıtım için varsayılan.',
   'clusters.addworker.noClusters': 'Kullanılabilir Docker kümesi bulunamadı',
@@ -167,7 +167,7 @@ export default {
   'clusters.addworker.theadNotes-02':
     'T-Head PPU, cihaz enjeksiyonu için Container Device Interface (CDI) kullanır ve CDI oluşturma için <span class="bold-text">/var/run/cdi</span> dizininin kullanılabilir olmasını gerektirir.',
   'clusters.addworker.nvidiaNotes':
-    'GPUStack\'teki yerleşik çıkarım altyapıları <span class="bold-text">CUDA 12.8+</span> gerektirir. Lütfen NVIDIA sürücü sürümünüzün <span class="bold-text">570</span> veya daha yeni olduğundan emin olun.',
+    'OriginHub\'teki yerleşik çıkarım altyapıları <span class="bold-text">CUDA 12.8+</span> gerektirir. Lütfen NVIDIA sürücü sürümünüzün <span class="bold-text">570</span> veya daha yeni olduğundan emin olun.',
   'clusters.volume.title': 'Birim Bağlamaları',
   'clusters.volume.name': 'Birim Adı',
   'clusters.volume.mountPath': 'Konteyner Yolu',
@@ -194,7 +194,7 @@ export default {
   'clusters.systemDefaultContainerRegistry.title':
     'Varsayılan Konteyner Kayıt Defteri',
   'clusters.systemDefaultContainerRegistry.tip':
-    'Bu küme için GPUStack imajlarının çözümlenmesinde kullanılan varsayılan kayıt defteri. Ayarlanmadığında sunucu varsayılanına döner.',
+    'Bu küme için OriginHub imajlarının çözümlenmesinde kullanılan varsayılan kayıt defteri. Ayarlanmadığında sunucu varsayılanına döner.',
   'clusters.systemDefaultContainerRegistry.dockerHubUnreachable':
     '{provider} örnekleri Docker Hub’a erişemez. Bir ayna veya özel kayıt defteri kullanın.',
   'clusters.k8sOptions.title': 'Kubernetes Dağıtım Seçenekleri',
@@ -208,7 +208,7 @@ export default {
     "Her işçi düğüm DaemonSet'ine uygulanan pod nodeSelector değeri — yalnızca etiketleri eşleşen düğümler işçi düğümü çalıştırmaya uygundur.",
   'clusters.operatorImage.title': 'Operatör İmajı',
   'clusters.operatorImage.tip':
-    'GPUStack Operatör konteyner imajı için geçersiz kılma. Sunucu varsayılanını kullanmak için boş bırakın.',
+    'OriginHub Operatör konteyner imajı için geçersiz kılma. Sunucu varsayılanını kullanmak için boş bırakın.',
   'clusters.namespace.title': 'Namespace',
   'clusters.namespace.tip':
     'Kümenin bildirimlerinin oluşturulacağı Kubernetes ad alanı. gpustack-system kullanmak için boş bırakın.',

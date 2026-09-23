@@ -1,5 +1,6 @@
 import { StatusMaps } from '@/config';
 import { StatusType } from '@/config/types';
+import { docLink } from '@/constants/external-links';
 import { icons } from '@gpustack/core-ui';
 
 export const TargetStatusValueMap: Record<string, string> = {
@@ -49,4 +50,6 @@ export const rowActionList = [
   }
 ];
 
-export const genericReferLink = `https://docs.gpustack.ai/latest/user-guide/model-deployment-management/#enable-generic-proxy`;
+export const genericReferLink = docLink(
+  'user-guide/model-deployment-management/#enable-generic-proxy'
+);

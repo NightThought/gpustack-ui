@@ -52,7 +52,7 @@ export default {
     'MacOSまたはWindowsはサポートされていません。',
   'resources.worker.current.version': '現在のバージョンは {version} です。',
   'resources.worker.driver.install':
-    '<a href="https://docs.gpustack.ai/latest/installation/installation-requirements/" target="_blank">必要なドライバとライブラリ</a> をGPUStackのインストール前にインストールしてください。',
+    '<a href="https://docs.gpustack.ai/latest/installation/installation-requirements/" target="_blank">必要なドライバとライブラリ</a> をOriginHubのインストール前にインストールしてください。',
   'resources.worker.select.command':
     'ラベルを選択してコマンドを生成し、コピーを使用してコマンドをコピーします。',
   'resources.worker.script.install': 'スクリプトインストール',
@@ -89,7 +89,7 @@ export default {
     'Paste the <span class="bold-text">Token</span>.',
   'resources.register.worker.step7':
     'Click <span class="bold-text">Restart</span> to apply the settings.',
-  'resources.register.install.title': 'Install GPUStack on {os}',
+  'resources.register.install.title': 'Install OriginHub on {os}',
   'resources.register.download':
     'Download and install the <a href={url} target="_blank">installer</a>. Only supported: {versions}.',
   'resource.register.maos.support': 'Apple Silicon (M series), macOS 14+',
@@ -121,7 +121,7 @@ export default {
     'No available clusters. Please create a cluster before adding a node.',
   'resources.metrics.details': 'Monitoring',
   'resoureces.worker.upgrade.tips':
-    'The Worker version does not match the GPUStack Server version. Please keep them consistent.',
+    'The Worker version does not match the OriginHub Server version. Please keep them consistent.',
   'resources.worker.version': 'Worker Version: {version}',
   'resources.server.version': 'Server Version: {version}',
   'resources.worker.currentVersion': 'Current Version: {version}',
@@ -137,7 +137,7 @@ export default {
 // 5. 'resources.register.worker.step5': 'Enter the <span class="bold-text">Server URL</span>: {url}.',
 // 6. 'resources.register.worker.step6': 'Paste the <span class="bold-text">Token</span>.',
 // 7. 'resources.register.worker.step7': 'Click <span class="bold-text">Restart</span> to apply the settings.',
-// 8. 'resources.register.install.title': 'Install GPUStack on {os}',
+// 8. 'resources.register.install.title': 'Install OriginHub on {os}',
 // 9. 'resources.register.download':'Download and install the <a>installer</a>. Only supported: {versions}.',
 // 10. 'resource.register.maos.support': 'Apple Silicon (M series), macOS 14+',
 // 11. 'resource.register.windows.support': 'win 10, win 11',
@@ -154,5 +154,5 @@ export default {
 // 22. 'resources.worker.maintenance.remark.rules': 'Please enter maintenance remarks',
 // 23. 'resources.worker.maintenance.tips': 'When maintenance mode is enabled, the node will stop scheduling new model deployment tasks. Running instances will not be affected.',
 // 24. 'resources.worker.noCluster.tips': 'No available clusters. Please create a cluster before adding a node.'
-// 25. 'resoureces.worker.upgrade.tips': 'The Worker version does not match the GPUStack Server version. Please keep them consistent.'
+// 25. 'resoureces.worker.upgrade.tips': 'The Worker version does not match the OriginHub Server version. Please keep them consistent.'
 // ========== End of To-Do List ==========

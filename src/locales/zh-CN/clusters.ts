@@ -92,7 +92,7 @@ export default {
   'clusters.addworker.detectWorkerAddress.tips':
     '如果未指定，则默认为节点 IP。',
   'clusters.addworker.externalIP.tips':
-    '如运行在 VPC 或私有网络时，请指定 GPUStack Server 可达的节点外部地址。',
+    '如运行在 VPC 或私有网络时，请指定 OriginHub Server 可达的节点外部地址。',
   'clusters.addworker.enterWorkerIP': '输入节点 IP',
   'clusters.addworker.enterWorkerIP.error': '请输入节点 IP',
   'clusters.addworker.enterWorkerAddress': '输入节点外部地址',
@@ -119,11 +119,11 @@ export default {
     '已将 {count} 个新节点添加到集群中。',
   'clusters.addworker.message.success_multiple':
     '已将 {count} 个新节点添加到集群中。',
-  'clusters.create.serverUrl': 'GPUStack Server URL',
+  'clusters.create.serverUrl': 'OriginHub Server URL',
   'clusters.create.workerConfig': '节点配置',
   'clusters.chartValues.title': 'Chart Values（YAML）',
   'clusters.chartValues.tip':
-    'GPUStack Helm chart 的 values，key 就是 chart 自己的 key，原样合并到服务端派生的值之上。上面没有对应字段、但 chart 及其子 chart 提供的能力都可以在这里配置 —— 例如关掉集群已自备的组件。与 Helm 一致，list 是整体替换而非追加。',
+    'OriginHub Helm chart 的 values，key 就是 chart 自己的 key，原样合并到服务端派生的值之上。上面没有对应字段、但 chart 及其子 chart 提供的能力都可以在这里配置 —— 例如关掉集群已自备的组件。与 Helm 一致，list 是整体替换而非追加。',
   'clusters.chartValues.reapply.tip':
     '保存集群不会改动 Kubernetes 里的任何东西。改完需要重新走「注册集群」拿到 manifest 并再次 apply —— 集群内的 Job 会比较 manifest 要求的配置与 release 实际安装的配置，只在不同时才升级。',
   'clusters.chartValues.doc.chart': 'Chart values',
@@ -139,12 +139,12 @@ export default {
     '您已修改注册节点时生效的配置，需要在目标集群上重新运行注册命令才会生效。',
   'clusters.addworker.containerName': '节点容器名称',
   'clusters.addworker.containerName.tips': '为节点容器指定一个名称。',
-  'clusters.addworker.dataVolume': 'GPUStack 数据卷',
-  'clusters.addworker.dataVolume.tips': '为 GPUStack 指定数据存储路径。',
+  'clusters.addworker.dataVolume': 'OriginHub 数据卷',
+  'clusters.addworker.dataVolume.tips': '为 OriginHub 指定数据存储路径。',
   'clusters.table.ip.internal': '内',
   'clusters.table.ip.external': '外',
   'clusters.form.serverUrl.tips':
-    '如果节点无法直接访问 GPUStack Server，则指定一个可访问的外部 GPUStack Server 地址。例如：{example}',
+    '如果节点无法直接访问 OriginHub Server，则指定一个可访问的外部 OriginHub Server 地址。例如：{example}',
   'clusters.form.setDefault': '设为默认',
   'clusters.form.setDefault.tips': '部署时的默认集群。',
   'clusters.addworker.noClusters': '无可用的 Docker 集群',
@@ -160,7 +160,7 @@ export default {
   'clusters.addworker.theadNotes-02':
     '平头哥（T-Head）PPU 使用容器设备接口（CDI）进行设备注入，因此需要确保 <span class="bold-text">/var/run/cdi</span> 目录可用以生成 CDI。',
   'clusters.addworker.nvidiaNotes':
-    'GPUStack 内置推理后端依赖 <span class="bold-text">CUDA 12.8</span> 及以上版本，请确保 NVIDIA 驱动版本为 <span class="bold-text">570</span> 或以上。',
+    'OriginHub 内置推理后端依赖 <span class="bold-text">CUDA 12.8</span> 及以上版本，请确保 NVIDIA 驱动版本为 <span class="bold-text">570</span> 或以上。',
   'clusters.volume.title': '卷挂载',
   'clusters.volume.name': '卷名称',
   'clusters.volume.mountPath': '容器内路径',
@@ -186,7 +186,7 @@ export default {
   'clusters.volume.add': '添加卷挂载',
   'clusters.systemDefaultContainerRegistry.title': '默认容器镜像仓库',
   'clusters.systemDefaultContainerRegistry.tip':
-    '用于解析该集群 GPUStack 镜像的默认镜像仓库。未设置时回退到服务端默认值。',
+    '用于解析该集群平台镜像的默认镜像仓库。未设置时回退到服务端默认值。',
   'clusters.systemDefaultContainerRegistry.dockerHubUnreachable':
     '{provider} 的实例无法访问 Docker Hub，请填写镜像加速地址或私有仓库。',
   'clusters.k8sOptions.title': 'Kubernetes 部署选项',
@@ -200,7 +200,7 @@ export default {
     '应用到每个 worker DaemonSet 的 Pod nodeSelector，只有标签匹配的节点才会被调度运行 worker。',
   'clusters.operatorImage.title': 'Operator 镜像',
   'clusters.operatorImage.tip':
-    'GPUStack Operator 容器镜像的覆盖值。留空则使用服务端默认值。',
+    'OriginHub Operator 容器镜像的覆盖值。留空则使用服务端默认值。',
   'clusters.namespace.title': '命名空间',
   'clusters.namespace.tip':
     '集群清单渲染所使用的 Kubernetes 命名空间。留空则使用 gpustack-system。',

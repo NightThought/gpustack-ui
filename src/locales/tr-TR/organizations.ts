@@ -1,7 +1,7 @@
 export default {
   'organizations.upsell.title': 'Kuruluşlar bir Enterprise özelliğidir',
   'organizations.upsell.subtitle':
-    "Çok kiracılılık, kullanıcıları, kaynakları ve kotaları ekipler arasında yalıtmanızı sağlar. Kuruluşları yönetmek için GPUStack Enterprise'a yükseltin.",
+    'Çok kiracılılık, kullanıcıları, kaynakları ve kotaları ekipler arasında yalıtmanızı sağlar. Kuruluşlar bu sürümde etkin değildir.',
   'organizations.upsell.featuresTitle': 'Enterprise ile elde ettikleriniz',
   'organizations.upsell.feature.orgs':
     'Kullanıcıları gruplamak ve iş yüklerini yalıtmak için kuruluşlar oluşturun',

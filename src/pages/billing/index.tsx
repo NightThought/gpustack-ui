@@ -1,3 +1,4 @@
+import externalLinks, { isConfigured } from '@/constants/external-links';
 import { IconFont } from '@gpustack/core-ui';
 import { useIntl } from '@umijs/max';
 import { Button, Result, Typography } from 'antd';
@@ -59,16 +60,26 @@ const Billing: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <div style={{ textAlign: 'center', marginTop: 56 }}>
-                <Button
-                  type="primary"
-                  href="https://gpustack.ai/enterprise"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {intl.formatMessage({ id: 'billing.upsell.cta' })}
-                </Button>
-              </div>
+              {/*
+                The call to action used to link to the upstream vendor's
+                commercial page. It now follows the configured site, and is
+                omitted entirely when there is none: a button that advertises a
+                product this deployment does not sell, pointing at somebody
+                else's checkout, is the worst possible thing to leave in a
+                rebranded console.
+              */}
+              {isConfigured('site') && (
+                <div style={{ textAlign: 'center', marginTop: 56 }}>
+                  <Button
+                    type="primary"
+                    href={externalLinks.site}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {intl.formatMessage({ id: 'billing.upsell.cta' })}
+                  </Button>
+                </div>
+              )}
             </div>
           }
         />

@@ -62,7 +62,7 @@ export default {
   'models.form.env': 'Environment Variables',
   'models.form.configurations': 'Configurations',
   'models.form.s3address': 'S3 Address',
-  'models.form.partialoffload.tips': `When CPU offloading is enabled, GPUStack will allocate CPU memory if GPU resources are insufficient. You must correctly configure the inference backend to use hybrid CPU+GPU or full CPU inference.`,
+  'models.form.partialoffload.tips': `When CPU offloading is enabled, OriginHub will allocate CPU memory if GPU resources are insufficient. You must correctly configure the inference backend to use hybrid CPU+GPU or full CPU inference.`,
   'models.form.distribution.tips': `Allows for offloading part of the model's layers to single or multiple remote workers when the resources of a worker are insufficient.`,
   'models.openinplayground': 'Open in Playground',
   'models.instances': 'instances',
@@ -72,7 +72,7 @@ export default {
   'model.deploy.sort': 'Sort',
   'model.deploy.search.placeholder': 'Type <kbd>/</kbd> to search models',
   'model.form.ollamatips':
-    'Tip: The following are the preconfigured Ollama models in GPUStack. Please select the model you want, or directly enter the model you wish to deploy in the 【{name}】 input box on the right.',
+    'Tip: The following are the preconfigured Ollama models in OriginHub. Please select the model you want, or directly enter the model you wish to deploy in the 【{name}】 input box on the right.',
   'models.sort.name': 'Name',
   'models.sort.size': 'Size',
   'models.sort.likes': 'Likes',
@@ -144,7 +144,7 @@ export default {
   'models.form.filePath': 'Model Path',
   'models.form.backendVersion': 'Backend Version',
   'models.form.backendVersion.tips':
-    'To use the desired version of {backend}{version}, the system will automatically create a virtual environment in the online environment to install the corresponding version. After a GPUStack upgrade, the backend version will remain fixed. {link}',
+    'To use the desired version of {backend}{version}, the system will automatically create a virtual environment in the online environment to install the corresponding version. After a OriginHub upgrade, the backend version will remain fixed. {link}',
   'models.form.gpuselector': 'GPU Selector',
   'models.form.backend.llamabox':
     'For GGUF format models, supports Linux, macOS, and Windows.',
@@ -413,7 +413,7 @@ export default {
   'models.form.backendVersions.tips': `To use more versions, go to the {link} page and edit the backend to add versions.`,
   'models.catalog.nogpus.tips':
     'No compatible GPUs are available in the selected cluster for this model.',
-  'models.form.modelfile.notfound': `The model file path you specified does not exist on the GPUStack server. It's recommended to place the model file at the same path on both the GPUStack server and GPUStack workers. This helps GPUStack make better decisions.`,
+  'models.form.modelfile.notfound': `The model file path you specified does not exist on the OriginHub server. It's recommended to place the model file at the same path on both the OriginHub server and OriginHub workers. This helps OriginHub make better decisions.`,
   'models.form.readyWorkers': 'workers ready',
   'models.form.maxContextLength': 'Maximum Context Length',
   'models.form.backend.helperText':
@@ -437,5 +437,5 @@ export default {
   // Model catalog source configuration
   'models.catalog.source.title': 'Catalog Source',
   'models.catalog.source.official':
-    'Follows the catalog GPUStack publishes, on top of the one packaged with this release.'
+    'Follows the published catalog, on top of the one packaged with this release.'
 };

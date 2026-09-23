@@ -1,0 +1,94 @@
+OriginHub Console
+Copyright (c) 2026 OriginHub authors
+
+This product is a derivative work of the GPUStack web console
+(https://github.com/gpustack/gpustack-ui), and includes software developed by
+the GPUStack project:
+
+    Copyright (c) 2024 The GPUStack authors
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+The complete text of the Apache License, Version 2.0 is distributed with this
+product in the file LICENSE, including the upstream copyright notice at the end
+of that file. A summary of the modifications made to the upstream work is in
+the file CHANGES.md.
+
+"GPUStack" and the GPUStack logo are trademarks of their respective owner.
+Their use in this file is limited to attributing the origin of this software as
+the Apache License, Version 2.0 requires. No trademark license is granted or
+implied, and this product is not endorsed by, sponsored by, or affiliated with
+the GPUStack project.
+
+--------------------------------------------------------------------------------
+Third-party components
+
+This console bundles software from third parties, each under its own license.
+They are not covered by the notice above and are not relicensed by it. The
+direct runtime dependencies are enumerated in package.json and pinned in
+pnpm-lock.yaml; they include but are not limited to:
+
+  React and ReactDOM (MIT), UmiJS / @umijs/max (MIT), Ant Design and
+  @ant-design/* (MIT), antd-style (MIT), styled-components (MIT),
+  jotai (MIT), ahooks (MIT), axios (MIT), dayjs (MIT), lodash (MIT),
+  ECharts (Apache-2.0), Monaco Editor and monaco-yaml (MIT),
+  xterm.js (MIT), react-markdown, remark/rehype ecosystem (MIT),
+  KaTeX (MIT), highlight.js (BSD-3-Clause), marked (MIT),
+  js-yaml (MIT), semver (ISC), crypto-js (MIT), file-saver (MIT),
+  wavesurfer.js (BSD-3-Clause), lamejs (LGPL-3.0), overlayscrollbars
+  (custom/MIT), classnames (MIT), numeral (MIT), jdenticon (MIT).
+
+  Dev/build tooling (@umijs/max presets, TypeScript, Prettier, ESLint, husky,
+  lint-staged, tsx), which is not shipped in the built bundle.
+
+  Vendor and hardware icons under src/assets/providers-logo/ and
+  src/assets/logo/. Those are the trademarks and copyrighted works of their
+  respective owners. They are reproduced unmodified solely to identify
+  compatible hardware and model families, and no affiliation with or
+  endorsement by any of them is implied. A rebrand must not touch them.
+
+--------------------------------------------------------------------------------
+Component whose licence declaration is being fixed
+
+  @gpustack/core-ui — the shared component library this console imports in 419
+  files (see package.json and pnpm-lock.yaml).
+
+  State: the version this console resolves declares no licence. Its package
+  manifest has no `license` field, the registry therefore reports the package as
+  `Proprietary` — npm's label for "no grant stated" — and the repository it is
+  built from carried no LICENSE file. A grant that is not stated is not a grant,
+  so the artifact a recipient downloads does not say what terms it comes under.
+
+  The fix is prepared, not published: that repository now carries the
+  Apache-2.0 text and a `license` field, and the version bump that will ship them
+  is in progress. Neither is in 1.1.20 — checked by reading the published
+  metadata, and by listing the tarball: it contains no LICENSE file at all. Until
+  a release carries it and this console is moved to that release, the paragraph
+  above describes what the shipped bundle actually contains, which is why it
+  stays here rather than being deleted early.
+
+  The component is also a branding surface this repository cannot rebrand from
+  here: it exports ready-made text and image references (for example
+  `AddWorkerDockerNotes`, consumed as data in
+  src/pages/cluster-management/components/), and it carries a Footer component
+  that links to https://gpustack.ai. That Footer is not rendered by this console
+  today — the console has its own — but it is present for whoever adopts it next.
+
+For an authoritative, machine-generated inventory of the components actually
+shipped in a given build, generate an SBOM and a license report from the
+installed tree rather than relying on the lists above:
+
+    pnpm install --frozen-lockfile
+    npx --yes sbom-tool generate -b . -bc . -pn OriginHub-Console -pv 0.0.0 \
+        -nsb https://originhub.local -o ./_sbom
+    npx --yes license-checker --production --summary

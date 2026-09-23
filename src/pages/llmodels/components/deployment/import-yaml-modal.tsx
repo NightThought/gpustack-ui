@@ -1,3 +1,4 @@
+import { docLink } from '@/constants/external-links';
 import useUserSettings from '@/hooks/use-user-settings';
 import { ExclamationCircleFilled, LoadingOutlined } from '@ant-design/icons';
 import {
@@ -40,8 +41,9 @@ interface ImportYamlModalProps {
 }
 
 // Where the field names in the document are written down.
-const FIELDS_DOC =
-  'https://docs.gpustack.ai/latest/user-guide/model-deployment-management/#field-reference';
+const FIELDS_DOC = docLink(
+  'user-guide/model-deployment-management/#field-reference'
+);
 
 // Everything the drawer puts above and below the diff — its own header, the
 // cluster row, the breadcrumb and the footer. What is left over is the diff's,

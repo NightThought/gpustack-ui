@@ -1,6 +1,7 @@
 import { GPUStackVersionAtom, UpdateCheckAtom } from '@/atoms/user';
 import PluginExtraField from '@/components/plugin-extra-fields';
 import VersionInfo, { modalConfig } from '@/components/version-info';
+import { PRODUCT_NAME } from '@/config/branding';
 import externalLinks from '@/constants/external-links';
 import { logout } from '@/pages/login/apis';
 import { getGPUStackPlugin } from '@/plugins';
@@ -250,7 +251,7 @@ export const ExtraContent = (props: { isDarkTheme?: boolean }) => {
     {
       key: 'site',
       icon: <HomeOutlined />,
-      label: 'GPUStack',
+      label: PRODUCT_NAME,
       url: externalLinks.site
     },
     {
@@ -283,7 +284,9 @@ export const ExtraContent = (props: { isDarkTheme?: boolean }) => {
       label: intl.formatMessage({ id: 'common.button.imageSelector' }),
       url: externalLinks.imageSelector
     }
-  ];
+    // An unconfigured link would render href="", which navigates to the current
+    // page and reads as a broken button rather than as a missing configuration.
+  ].filter((item) => !('url' in item) || Boolean(item.url));
 
   const helpMenu = {
     items: helpList.map((item) => ({

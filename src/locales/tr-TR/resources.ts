@@ -52,7 +52,7 @@ export default {
   'resources.worker.container.supported': 'macOS veya Windows desteklenmez.',
   'resources.worker.current.version': 'Mevcut sürüm: {version}.',
   'resources.worker.driver.install':
-    'GPUStack kurulumundan önce <a href="https://docs.gpustack.ai/latest/installation/installation-requirements/" target="_blank">gerekli sürücüleri ve kütüphaneleri</a> yükleyin.',
+    'OriginHub kurulumundan önce <a href="https://docs.gpustack.ai/latest/installation/installation-requirements/" target="_blank">gerekli sürücüleri ve kütüphaneleri</a> yükleyin.',
   'resources.worker.select.command':
     'Komutu oluşturmak için bir etiket seçin ve kopyala düğmesiyle kopyalayın.',
   'resources.worker.script.install': 'Betik Kurulumu',
@@ -89,7 +89,7 @@ export default {
     '<span class="bold-text">Token</span>\'ı yapıştırın.',
   'resources.register.worker.step7':
     'Ayarları uygulamak için <span class="bold-text">Yeniden Başlat</span>\'a tıklayın.',
-  'resources.register.install.title': '{os} üzerine GPUStack kur',
+  'resources.register.install.title': '{os} üzerine OriginHub kur',
   'resources.register.download':
     '<a href={url} target="_blank">Yükleyiciyi</a> indirip kurun. Yalnızca desteklenen: {versions}.',
   'resource.register.maos.support': 'Apple Silicon (M serisi), macOS 14+',
@@ -119,7 +119,7 @@ export default {
     'Kullanılabilir küme yok. Lütfen düğüm eklemeden önce bir küme oluşturun.',
   'resources.metrics.details': 'İzleme',
   'resoureces.worker.upgrade.tips':
-    'İşçi düğüm sürümü, GPUStack Sunucu sürümüyle eşleşmiyor. Lütfen sürümleri aynı tutun.',
+    'İşçi düğüm sürümü, OriginHub Sunucu sürümüyle eşleşmiyor. Lütfen sürümleri aynı tutun.',
   'resources.worker.version': 'İşçi Düğüm Sürümü: {version}',
   'resources.server.version': 'Sunucu Sürümü: {version}',
   'resources.worker.currentVersion': 'Geçerli Sürüm: {version}',
@@ -128,5 +128,5 @@ export default {
 };
 
 // ========== To-Do: Translate Keys (Remove After Translation) ==========
-// 1. 'resoureces.worker.upgrade.tips': 'The Worker version does not match the GPUStack Server version. Please keep them consistent.'
+// 1. 'resoureces.worker.upgrade.tips': 'The Worker version does not match the OriginHub Server version. Please keep them consistent.'
 // ========== End of To-Do List ==========

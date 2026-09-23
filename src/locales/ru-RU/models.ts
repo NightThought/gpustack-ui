@@ -64,7 +64,7 @@ export default {
   'models.form.configurations': 'Конфигурации',
   'models.form.s3address': 'S3-адрес',
   'models.form.partialoffload.tips':
-    'При включении CPU оффлоудинга GPUStack будет выделять оперативную память, если ресурсов GPU недостаточно. Вы должны правильно настроить бэкенд вывода для использования гибридного CPU+GPU или полного CPU вывода.',
+    'При включении CPU оффлоудинга OriginHub будет выделять оперативную память, если ресурсов GPU недостаточно. Вы должны правильно настроить бэкенд вывода для использования гибридного CPU+GPU или полного CPU вывода.',
   'models.form.distribution.tips':
     'Позволяет переносить часть слоёв модели на один или несколько удалённых воркеров, когда ресурсов текущего воркера недостаточно.',
   'models.openinplayground': 'Открыть в Песочнице',
@@ -75,7 +75,7 @@ export default {
   'model.deploy.sort': 'Сортировка',
   'model.deploy.search.placeholder': 'Введите <kbd>/</kbd> для поиска моделей',
   'model.form.ollamatips':
-    'Подсказка: ниже представлены предустановленные модели Ollama в GPUStack. Выберите нужную или введите модель для развертывания в поле 【{name}】 справа.',
+    'Подсказка: ниже представлены предустановленные модели Ollama в OriginHub. Выберите нужную или введите модель для развертывания в поле 【{name}】 справа.',
   'models.sort.name': 'По имени',
   'models.sort.size': 'По размеру',
   'models.sort.likes': 'По лайкам',
@@ -147,7 +147,7 @@ export default {
   'models.form.filePath': 'Путь к модели',
   'models.form.backendVersion': 'Версия бэкенда',
   'models.form.backendVersion.tips':
-    'Чтобы использовать желаемую версию {backend} {version}, система автоматически создаст виртуальную среду в онлайн-окружении для установки соответствующей версии. После обновления GPUStack версия бэкенда останется зафиксированной. {link}',
+    'Чтобы использовать желаемую версию {backend} {version}, система автоматически создаст виртуальную среду в онлайн-окружении для установки соответствующей версии. После обновления OriginHub версия бэкенда останется зафиксированной. {link}',
   'models.form.gpuselector': 'Селектор GPU',
   'models.form.backend.llamabox':
     'Для моделей формата GGUF. Поддержка Linux, macOS и Windows.',
@@ -418,7 +418,7 @@ export default {
   'models.form.backendVersions.tips': `Чтобы использовать больше версий, перейдите на страницу {link} и отредактируйте бэкенд для добавления версий.`,
   'models.catalog.nogpus.tips':
     'В выбранном кластере нет доступных GPU, совместимых с этой моделью.',
-  'models.form.modelfile.notfound': `Указанный путь к файлу модели не существует на сервере GPUStack. Рекомендуется размещать файл модели по одному и тому же пути как на сервере GPUStack, так и на воркерах GPUStack. Это поможет системе принимать лучшие решения по распределению ресурсов.`,
+  'models.form.modelfile.notfound': `Указанный путь к файлу модели не существует на сервере OriginHub. Рекомендуется размещать файл модели по одному и тому же пути как на сервере OriginHub, так и на воркерах OriginHub. Это поможет системе принимать лучшие решения по распределению ресурсов.`,
   'models.form.readyWorkers': 'воркеров готово',
   'models.form.maxContextLength': 'Maximum Context Length',
   'models.form.backend.helperText':
@@ -442,7 +442,7 @@ export default {
   // Model catalog source configuration
   'models.catalog.source.title': 'Источник каталога',
   'models.catalog.source.official':
-    'Follows the catalog GPUStack publishes, on top of the one packaged with this release.'
+    'Follows the published catalog, on top of the one packaged with this release.'
 };
 
 // ========== To-Do: Translate Keys (Remove After Translation) ==========

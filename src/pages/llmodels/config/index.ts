@@ -1,4 +1,5 @@
 import { StatusMaps } from '@/config';
+import { docLink } from '@/constants/external-links';
 import { EditOutlined } from '@ant-design/icons';
 import { backendOptionsMap } from '../constants/backend-parameters';
 
@@ -471,7 +472,9 @@ export const getBackendParamsTips = (backend: string) => {
     return {
       backend: 'Ascend MindIE',
       releases: '',
-      link: 'https://docs.gpustack.ai/latest/user-guide/built-in-inference-backends/?h=parameters+reference#parameters-reference_2',
+      link: docLink(
+        'user-guide/built-in-inference-backends/?h=parameters+reference#parameters-reference_2'
+      ),
       version: '1.0.0'
     };
   }

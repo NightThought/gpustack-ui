@@ -296,18 +296,23 @@ const AudioInput: React.FC<AudioInputProps> = (props) => {
         <span>
           <span>
             {intl.formatMessage({ id: 'playground.audio.enablemic' })}
-            <Button
-              size="small"
-              color="primary"
-              variant="link"
-              href={`${externalRefer.audioPermission}`}
-              target="_blank"
-              style={{
-                paddingInline: 0
-              }}
-            >
-              {intl.formatMessage({ id: 'playground.audio.enablemic.doc' })}
-            </Button>
+            {/* The docs link exists only when a documentation site is
+                configured; without one the sentence stands on its own rather
+                than growing a link that goes nowhere. */}
+            {externalRefer.audioPermission && (
+              <Button
+                size="small"
+                color="primary"
+                variant="link"
+                href={externalRefer.audioPermission}
+                target="_blank"
+                style={{
+                  paddingInline: 0
+                }}
+              >
+                {intl.formatMessage({ id: 'playground.audio.enablemic.doc' })}
+              </Button>
+            )}
           </span>
         </span>
       );

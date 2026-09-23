@@ -37,12 +37,12 @@ export default {
   'users.password.confirm.empty': '请确认新密码',
   'users.password.confirm.error': '两次输入的密码不一致',
   'users.login.title': '登录',
-  'users.version.islatest': 'GPUStack {version} 已是最新版本',
-  'users.version.update': 'GPUStack {version} 版本可供更新',
+  'users.version.islatest': 'OriginHub {version} 已是最新版本',
+  'users.version.update': 'OriginHub {version} 版本可供更新',
   'users.settings.title': '用户设置',
   'users.status.activate': '启用账户',
   'users.status.deactivate': '停用账户',
   'users.status.inactiveAccount': '停用账户',
   'users.login.getInitialPassword':
-    '在 GPUStack Server 节点运行以下命令以获取初始管理员密码。'
+    '在 OriginHub Server 节点运行以下命令以获取初始管理员密码。'
 };

@@ -17,6 +17,25 @@ env:
   NODE_VERSION: '22'
 
 jobs:
+  # Deliberately independent of `deps`: the brand guard needs only Node, so it
+  # reports brand regressions and lost attribution in seconds, and keeps working
+  # on a branch whose dependency install is broken.
+  brand:
+    timeout-minutes: 5
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+      - name: Brand and attribution guard
+        run: node scripts/check-brand.cjs
+
   deps:
     timeout-minutes: 30
     runs-on: ubuntu-22.04
@@ -128,7 +147,11 @@ jobs:
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.DISPATCH_PAT }}
-          repository: gpustack/gpustack
+          # This fork's own backend, whose pack.yaml listens for `ui-built`.
+          # Pointing at the upstream repository would try to trigger a build that
+          # does not consume this artifact, and a valid PAT here would be spent on
+          # someone else's project.
+          repository: NightThought/gpustack
           event-type: ui-built
           client-payload: |
             {
